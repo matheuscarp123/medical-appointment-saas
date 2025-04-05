@@ -1,25 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Box, Typography, Container, Paper } from '@mui/material';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container maxWidth="sm">
+      <Box sx={{ mt: 4 }}>
+        <Paper elevation={3} sx={{ p: 4 }}>
+          <Typography variant="h4" component="h1" gutterBottom>
+            Medical Appointment System
+          </Typography>
+          <Typography variant="body1" paragraph>
+            Welcome to our medical appointment scheduling system. This is a test deployment.
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Frontend is successfully deployed!
+          </Typography>
+        </Paper>
+      </Box>
+    </Container>
   );
 }
 
