@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/medical-appointment-saas/static/css/main.e6c13ad2.css",
+    "main.js": "/medical-appointment-saas/static/js/main.1ff2e8c2.js",
+    "static/js/453.8ab44547.chunk.js": "/medical-appointment-saas/static/js/453.8ab44547.chunk.js",
+    "index.html": "/medical-appointment-saas/index.html",
+    "main.e6c13ad2.css.map": "/medical-appointment-saas/static/css/main.e6c13ad2.css.map",
+    "main.1ff2e8c2.js.map": "/medical-appointment-saas/static/js/main.1ff2e8c2.js.map",
+    "453.8ab44547.chunk.js.map": "/medical-appointment-saas/static/js/453.8ab44547.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.1ff2e8c2.js"
+  ]
+}
