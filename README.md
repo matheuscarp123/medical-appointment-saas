@@ -1,8 +1,34 @@
 # Sistema de Agendamento de Consultas Médicas
 
+[![React](https://img.shields.io/badge/React-18.2.0-blue.svg)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-4.9.5-blue.svg)](https://www.typescriptlang.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-14+-green.svg)](https://nodejs.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-4.4+-green.svg)](https://www.mongodb.com/)
+[![Express](https://img.shields.io/badge/Express-4.18.3-black.svg)](https://expressjs.com/)
+[![Material-UI](https://img.shields.io/badge/Material--UI-5.15.10-blue.svg)](https://mui.com/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 Um aplicativo web moderno para gerenciar consultas médicas, construído com uma arquitetura de microserviços.
 
-## Tecnologias Utilizadas
+## 🚀 Demonstração
+
+Acesse a versão implantada do aplicativo: [https://matheuscarp123.github.io/medical-appointment-saas/](https://matheuscarp123.github.io/medical-appointment-saas/)
+
+## 📋 Índice
+
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Arquitetura](#arquitetura)
+- [Funcionalidades](#funcionalidades)
+- [Configuração para Desenvolvimento](#configuração-para-desenvolvimento)
+- [Implantação](#implantação)
+- [Endpoints da API](#endpoints-da-api)
+- [Recursos de Segurança](#recursos-de-segurança)
+- [Testes](#testes)
+- [Melhorias Futuras](#melhorias-futuras)
+- [Como Contribuir](#como-contribuir)
+- [Licença](#licença)
+
+## 🛠️ Tecnologias Utilizadas
 
 ### Frontend (Parte Visual)
 - **Framework**: React 18.2.0 (biblioteca para criar interfaces)
@@ -26,7 +52,7 @@ Um aplicativo web moderno para gerenciar consultas médicas, construído com uma
 - **Documentação da API**: OpenAPI/Swagger
 - **Gerenciador de Pacotes**: npm
 
-## Arquitetura
+## 🏗️ Arquitetura
 
 ### Arquitetura do Frontend
 - Arquitetura baseada em componentes usando React
@@ -44,7 +70,7 @@ Um aplicativo web moderno para gerenciar consultas médicas, construído com uma
 - MongoDB para persistência de dados
 - TypeScript para segurança de tipos
 
-## Funcionalidades
+## ✨ Funcionalidades
 - Autenticação e autorização de usuários
 - Agendamento e gerenciamento de consultas
 - Verificação de disponibilidade em tempo real
@@ -53,7 +79,7 @@ Um aplicativo web moderno para gerenciar consultas médicas, construído com uma
 - Notificações por e-mail (planejado)
 - Design responsivo para todos os dispositivos
 
-## Configuração para Desenvolvimento
+## ⚙️ Configuração para Desenvolvimento
 
 ### Pré-requisitos
 - Node.js (versão 14 ou superior)
@@ -74,41 +100,41 @@ npm install
 npm run dev
 ```
 
-## Implantação
+## 🚀 Implantação
 - Frontend: Implantado no GitHub Pages
 - Backend: Pronto para implantação em várias plataformas (Heroku, Railway, etc.)
 
-## Endpoints da API
+## 🔌 Endpoints da API
 - `/api/auth` - Endpoints de autenticação
 - `/api/appointments` - Gerenciamento de consultas
 - `/api/users` - Gerenciamento de usuários
 - `/api/doctors` - Perfis e disponibilidade de médicos
 
-## Recursos de Segurança
+## 🔒 Recursos de Segurança
 - Autenticação baseada em JWT
 - Criptografia de senhas com bcrypt
 - Proteção CORS
 - Configuração de variáveis de ambiente
 - Validação e sanitização de entrada de dados
 
-## Testes
+## 🧪 Testes
 - Frontend: React Testing Library
 - Backend: Jest
 - Testes de API: Postman/Insomnia
 
-## Melhorias Futuras
+## 🔮 Melhorias Futuras
 - Notificações em tempo real usando WebSocket
 - Integração de pagamentos
 - Funcionalidade de consulta por vídeo
 - Aplicativo móvel
 - Painel de análise avançada
 
-## Como Contribuir
+## 🤝 Como Contribuir
 1. Faça um fork do repositório
 2. Crie sua branch de recurso
 3. Faça commit das suas alterações
 4. Envie para a branch
 5. Crie um Pull Request
 
-## Licença
+## 📄 Licença
 Licença MIT 
