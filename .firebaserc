@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "mediflow-fa8bd"
+  },
+  "targets": {
+    "mediflow-fa8bd": {
+      "hosting": {
+        "mediflowoficial": [
+          "mediflowoficial"
+        ]
+      }
+    }
+  }
+} 

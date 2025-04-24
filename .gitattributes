@@ -1,0 +1,37 @@
+# Arquivos de texto que devem ser normalizados
+*.tsx text
+*.ts text
+*.js text
+*.jsx text
+*.json text
+*.css text
+*.scss text
+*.html text
+*.md text
+*.yml text
+*.yaml text
+
+# Arquivos binários que não devem ser modificados
+*.png binary
+*.jpg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.tar binary
+*.gz binary
+
+# Arquivos que devem ser ignorados pelo Git LFS
+*.pem filter=lfs diff=lfs merge=lfs -text
+*.key filter=lfs diff=lfs merge=lfs -text
+*.cert filter=lfs diff=lfs merge=lfs -text
+*.crt filter=lfs diff=lfs merge=lfs -text
+*.p12 filter=lfs diff=lfs merge=lfs -text
+*.pfx filter=lfs diff=lfs merge=lfs -text
+
+# Arquivos que devem ser tratados como texto, mas com EOL normalizado
+*.env* text eol=lf
+*.env.local text eol=lf
+*.env.development text eol=lf
+*.env.test text eol=lf
+*.env.production text eol=lf 

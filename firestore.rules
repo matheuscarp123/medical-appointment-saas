@@ -1,0 +1,42 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Funções auxiliares
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isPremium() {
+      return isAuthenticated() && 
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.premium == true;
+    }
+    
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    // Regras para coleção de usuários
+    match /users/{userId} {
+      allow read: if isOwner(userId);
+      allow write: if isOwner(userId);
+    }
+    
+    // Regras para coleção de agendamentos
+    match /appointments/{userId} {
+      allow read, write: if isOwner(userId) && isPremium();
+    }
+    
+    // Regras para coleção de pacientes
+    match /patients/{userId} {
+      allow read, write: if isOwner(userId) && isPremium();
+    }
+    
+    // Regras para coleção de pagamentos
+    match /payments/{paymentId} {
+      allow read: if isOwner(resource.data.userId);
+      allow create: if isAuthenticated();
+      allow update: if false; // Apenas Cloud Functions podem atualizar
+    }
+  }
+} 

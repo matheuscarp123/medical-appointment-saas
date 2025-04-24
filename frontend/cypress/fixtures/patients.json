@@ -1,0 +1,56 @@
+[
+  {
+    "id": "patient1",
+    "nome": "Maria Oliveira",
+    "email": "maria.oliveira@email.com",
+    "telefone": "(11) 98888-7777",
+    "CPF": "123.456.789-00",
+    "dataNascimento": {
+      "_seconds": 483148800,
+      "_nanoseconds": 0
+    },
+    "genero": "feminino",
+    "endereco": {
+      "rua": "Rua das Flores, 123",
+      "cidade": "São Paulo",
+      "estado": "SP",
+      "cep": "01234-567"
+    },
+    "historicoMedico": {
+      "alergias": ["Penicilina"],
+      "condicoesCronicas": [],
+      "medicamentosAtuais": []
+    },
+    "createdAt": {
+      "_seconds": 1679616000,
+      "_nanoseconds": 0
+    }
+  },
+  {
+    "id": "patient2",
+    "nome": "Carlos Santos",
+    "email": "carlos.santos@email.com",
+    "telefone": "(11) 97777-6666",
+    "CPF": "987.654.321-00",
+    "dataNascimento": {
+      "_seconds": 378691200,
+      "_nanoseconds": 0
+    },
+    "genero": "masculino",
+    "endereco": {
+      "rua": "Avenida Paulista, 1000",
+      "cidade": "São Paulo",
+      "estado": "SP",
+      "cep": "01310-100"
+    },
+    "historicoMedico": {
+      "alergias": [],
+      "condicoesCronicas": ["Hipertensão"],
+      "medicamentosAtuais": ["Losartana"]
+    },
+    "createdAt": {
+      "_seconds": 1679616000,
+      "_nanoseconds": 0
+    }
+  }
+] 

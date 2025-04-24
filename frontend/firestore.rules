@@ -1,0 +1,58 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Funções auxiliares
+    function isAdmin() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+    
+    function isActiveSubscriber() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.subscriptionStatus == 'active';
+    }
+    
+    function isOwner(userId) {
+      return request.auth.uid == userId;
+    }
+
+    // Regras para usuários
+    match /users/{userId} {
+      allow read: if request.auth != null && (isOwner(userId) || isAdmin());
+      allow create: if request.auth != null;
+      allow update: if request.auth != null && (isOwner(userId) || isAdmin());
+      allow delete: if isAdmin();
+    }
+
+    // Regras para agendamentos
+    match /appointments/{appointmentId} {
+      allow read: if request.auth != null && (
+        isAdmin() || 
+        isActiveSubscriber() && resource.data.userId == request.auth.uid
+      );
+      allow create: if request.auth != null && isActiveSubscriber();
+      allow update: if request.auth != null && (
+        isAdmin() || 
+        isActiveSubscriber() && resource.data.userId == request.auth.uid
+      );
+      allow delete: if request.auth != null && (
+        isAdmin() || 
+        isActiveSubscriber() && resource.data.userId == request.auth.uid
+      );
+    }
+
+    // Regras para médicos
+    match /doctors/{doctorId} {
+      allow read: if request.auth != null;
+      allow write: if isAdmin();
+    }
+
+    // Regras para assinaturas
+    match /subscriptions/{subscriptionId} {
+      allow read: if request.auth != null && (
+        isAdmin() || 
+        resource.data.userId == request.auth.uid
+      );
+      allow create, update: if request.auth != null;
+      allow delete: if isAdmin();
+    }
+  }
+}

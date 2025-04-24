@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  # Serviço do Frontend para desenvolvimento
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    container_name: mediflow-frontend-dev
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+    command: npm start
+    networks:
+      - mediflow-network
+    restart: unless-stopped
+    stdin_open: true # Para funcionamento do React DevTools
+
+  # Serviço do Backend para desenvolvimento
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.dev
+    container_name: mediflow-backend-dev
+    ports:
+      - "3000:3000"
+      - "9229:9229" # Porta do debugger do Node.js
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+      - CORS_ORIGIN=http://localhost:8080
+      - FIREBASE_API_KEY=${FIREBASE_API_KEY}
+      - FIREBASE_AUTH_DOMAIN=${FIREBASE_AUTH_DOMAIN}
+      - FIREBASE_PROJECT_ID=${FIREBASE_PROJECT_ID}
+      - FIREBASE_STORAGE_BUCKET=${FIREBASE_STORAGE_BUCKET}
+      - FIREBASE_MESSAGING_SENDER_ID=${FIREBASE_MESSAGING_SENDER_ID}
+      - FIREBASE_APP_ID=${FIREBASE_APP_ID}
+    command: npm run dev
+    networks:
+      - mediflow-network
+    restart: unless-stopped
+
+networks:
+  mediflow-network:
+    driver: bridge 

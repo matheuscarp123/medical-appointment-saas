@@ -1,0 +1,16 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Verificar se há erros de linting
+npm run lint
+
+# Verificar se há erros de formatação
+npm run format:check
+
+# Verificar se há erros de teste
+npm run test
+
+# Verificar se há erros de build
+npm run build
+
+npx lint-staged 

@@ -1,24 +1,73 @@
 import React from 'react';
-import { Box, Typography, Container, Paper } from '@mui/material';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { ptBR } from '@mui/material/locale';
+import { AuthProvider } from './contexts/AuthContext';
+import { CssBaseline } from '@mui/material';
+import AppRoutes from './routes';
 
-function App() {
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#1976d2',
+      light: '#e3f2fd',
+    },
+    secondary: {
+      main: '#f50057',
+    },
+    background: {
+      default: '#f5f5f5',
+    },
+  },
+  typography: {
+    fontFamily: [
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+    ].join(','),
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: 'none',
+          borderRadius: 8,
+        },
+      },
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          borderRadius: 12,
+          boxShadow: '0 4px 12px 0 rgba(0,0,0,0.05)',
+        },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        rounded: {
+          borderRadius: 12,
+        },
+      },
+    },
+  },
+}, ptBR);
+
+const App: React.FC = () => {
   return (
-    <Container maxWidth="sm">
-      <Box sx={{ mt: 4 }}>
-        <Paper elevation={3} sx={{ p: 4 }}>
-          <Typography variant="h4" component="h1" gutterBottom>
-            Medical Appointment System
-          </Typography>
-          <Typography variant="body1" paragraph>
-            Welcome to our medical appointment scheduling system. This is a test deployment.
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Frontend is successfully deployed!
-          </Typography>
-        </Paper>
-      </Box>
-    </Container>
+    <ThemeProvider theme={theme}>
+      <AuthProvider>
+        <Router>
+          <CssBaseline />
+          <AppRoutes />
+          <ToastContainer position="top-right" autoClose={5000} />
+        </Router>
+      </AuthProvider>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
