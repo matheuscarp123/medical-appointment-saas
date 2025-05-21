@@ -1,0 +1,16 @@
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Instalar dependências
+COPY package.json package-lock.json ./
+RUN npm ci
+
+# Copiar o restante do código fonte
+COPY . .
+
+# Expor a porta para desenvolvimento
+EXPOSE 8080
+
+# Comando padrão para desenvolvimento
+CMD ["npm", "start"] 

@@ -1,0 +1,11 @@
+INSTRUÇÕES PARA A LOGO DA COBRA
+
+Por favor, adicione uma imagem de logo com uma cobra em formato PNG com fundo transparente e salve-a como "logo-snake-white.png" neste diretório.
+
+A logo deve seguir estas especificações:
+- Nome do arquivo: logo-snake-white.png
+- Formato: PNG com fundo transparente
+- Estilo: Uma cobra estilizada em branco
+- Tamanho recomendado: 200x200 pixels
+
+Esta logo será usada no cabeçalho e no menu lateral da aplicação MediFlow. 

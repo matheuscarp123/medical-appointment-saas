@@ -1,0 +1,42 @@
+[
+  {
+    "id": "doctor1",
+    "nome": "Dr. João Silva",
+    "email": "joao.silva@mediflow.com",
+    "telefone": "(11) 99999-8888",
+    "CRM": "12345",
+    "CRMUF": "SP",
+    "especialidade": ["Clínico Geral", "Cardiologia"],
+    "disponibilidade": {
+      "monday": ["08:00-12:00", "14:00-18:00"],
+      "tuesday": ["08:00-12:00", "14:00-18:00"],
+      "wednesday": ["08:00-12:00"],
+      "thursday": ["14:00-18:00"],
+      "friday": ["08:00-12:00", "14:00-18:00"]
+    },
+    "createdAt": {
+      "_seconds": 1679616000,
+      "_nanoseconds": 0
+    }
+  },
+  {
+    "id": "doctor2",
+    "nome": "Dra. Ana Souza",
+    "email": "ana.souza@mediflow.com",
+    "telefone": "(11) 99999-7777",
+    "CRM": "67890",
+    "CRMUF": "SP",
+    "especialidade": ["Neurologista"],
+    "disponibilidade": {
+      "monday": ["09:00-14:00"],
+      "tuesday": ["09:00-14:00"],
+      "wednesday": ["09:00-14:00"],
+      "thursday": ["09:00-14:00"],
+      "friday": ["09:00-14:00"]
+    },
+    "createdAt": {
+      "_seconds": 1679616000,
+      "_nanoseconds": 0
+    }
+  }
+] 

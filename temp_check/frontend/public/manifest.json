@@ -1,0 +1,20 @@
+{
+  "short_name": "MediFlow",
+  "name": "MediFlow - Sistema de Agendamento Médico",
+  "icons": [
+    {
+      "src": "assets/logo.png.PNG",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "assets/logo.png.PNG",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#1976d2",
+  "background_color": "#ffffff"
+}
